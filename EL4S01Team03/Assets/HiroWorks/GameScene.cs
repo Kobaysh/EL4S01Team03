@@ -25,5 +25,12 @@ public class GameScene : MonoBehaviour
         {
             SceneManager.LoadScene("Result");
         }
+
+        //てすと
+        if (Input.GetKey(KeyCode.A))
+        {
+            // コンソールへ表示
+            Debug.Log("debug comment");
+        }
     }
 }
