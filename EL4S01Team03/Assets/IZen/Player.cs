@@ -11,10 +11,15 @@ public class Player : MonoBehaviour
     private bool mIsHide;
     [SerializeField]
     private GameObject mBodySprite;
+
+    [SerializeField] private TilemapController tileMap; // タイルマップコントローラー
+
     void Start()
     {
         mRespawnPosition = transform.position;
         mIsHide = false;
+
+        if (!tileMap) tileMap = GameObject.Find("Tilemap").GetComponent<TilemapController>();
     }
 
     // Update is called once per frame
@@ -48,6 +53,36 @@ public class Player : MonoBehaviour
             position.y -= mSpeed * Time.deltaTime;
             transform.position = position;
         }
+
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    HideStart();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    HideEnd();
+        //}
+
+        if (tileMap)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                if (tileMap.CollisionHideTile(transform.position))
+                {
+                    HideStart();
+                    Debug.Log("hideStart");
+                }
+            
+            }
+
+            if (!tileMap.CollisionHideTile(transform.position))
+            {
+                HideEnd();
+                Debug.Log("hideEnd");
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,6 +110,13 @@ public class Player : MonoBehaviour
 
     public void HideEnd()
     {
-        
+        if(mIsHide)
+        {
+            mIsHide = false;
+            if (mBodySprite)
+            {
+                mBodySprite.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            }
+        }
     }
 }
