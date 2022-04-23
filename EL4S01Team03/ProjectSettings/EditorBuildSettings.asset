@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HiroWorks/GameOver.unity
     guid: 5b2172c52ee4f7948ae63769ed2a605e
+  - enabled: 1
+    path: Assets/Kobayashi/Asset/Scene/Field.unity
+    guid: eb58cfb7e85ddae4aa42ae59d415bcb6
   m_configObjects: {}

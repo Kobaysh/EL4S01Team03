@@ -16,7 +16,8 @@ public class Title : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene("SampleScene");
+        //    SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Field");
         }
     }
 }
