@@ -24,11 +24,9 @@ public class GameScene : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             SceneManager.LoadScene("Result");
-            // コンソールへ表示
-            Debug.Log("debug comment");
         }
 
-        //クリア時
+        //てすと
         if (Input.GetKey(KeyCode.A))
         {
             // コンソールへ表示
