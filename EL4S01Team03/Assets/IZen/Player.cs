@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +11,12 @@ public class Player : MonoBehaviour
     private float mSpeed;
     private Vector3 mRespawnPosition;
     private bool mIsHide;
+    private bool mIsGoal;
     [SerializeField]
     private GameObject mBodySprite;
     private GameObject mMainCamera;
+    [SerializeField]
+    private GameObject goalText;
 
     [SerializeField] private TilemapController tileMap; // タイルマップコントローラー
 
@@ -20,6 +25,7 @@ public class Player : MonoBehaviour
         mRespawnPosition = transform.position;
         mMainCamera = GameObject.Find("Main Camera");
         mIsHide = false;
+        mIsGoal = false;
         if (!tileMap) tileMap = GameObject.Find("Tilemap").GetComponent<TilemapController>();
 
         if (mMainCamera)
@@ -87,14 +93,30 @@ public class Player : MonoBehaviour
                 {
                     HideStart();
                     Debug.Log("hideStart");
-                }
-            
+                }            
             }
 
             if (!tileMap.CollisionHideTile(transform.position))
             {
                 HideEnd();
                 Debug.Log("hideEnd");
+            }
+            if (tileMap.CollisionGoalTile(transform.position))
+            {
+                if (!mIsGoal)
+                {
+                    mIsGoal = true;
+                    GameObject.Find("PostVolume").SetActive(false);
+                    goalText.SetActive(true);
+                }
+            }
+        }
+
+        if (mIsGoal)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("Result");
             }
         }
 
