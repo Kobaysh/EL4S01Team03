@@ -25,44 +25,45 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 direction = Vector3.zero;
+        bool HasInput = false;
         // ç∂Ç…à⁄ìÆ
         if (Input.GetKey(KeyCode.A))
-        {
-            Vector3 position = transform.position;
-            position.x -= mSpeed * Time.deltaTime;
-            transform.position = position;
+        {         
+            direction.x -= 1.0f;
+            HasInput = true;
         }
         // âEÇ…à⁄ìÆ
         if (Input.GetKey(KeyCode.D))
         {
-            Vector3 position = transform.position;
-            position.x += mSpeed * Time.deltaTime;
-            transform.position = position;
+            direction.x += 1.0f;
+            HasInput = true;
         }
         // ëOÇ…à⁄ìÆ
         if (Input.GetKey(KeyCode.W))
-        {
-            Vector3 position = transform.position;
-            position.y += mSpeed * Time.deltaTime;
-            transform.position = position;
+        {          
+            direction.y += 1.0f;
+            HasInput = true;
         }
         // å„ÇÎÇ…à⁄ìÆ
         if (Input.GetKey(KeyCode.S))
-        {
-            Vector3 position = transform.position;
-            position.y -= mSpeed * Time.deltaTime;
-            transform.position = position;
+        {          
+            direction.y -= 1.0f;
+            HasInput = true;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    HideStart();
-        //}
+        if(HasInput)
+        {
+            Vector3 position = transform.position + Vector3.Normalize(direction) * mSpeed * Time.deltaTime;
+            transform.position = position;
 
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    HideEnd();
-        //}
+            float ZRotation = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) + 90.0f;
+            Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, ZRotation);
+
+            transform.rotation = targetRotation;
+        }
+       
+
 
         if (tileMap)
         {
