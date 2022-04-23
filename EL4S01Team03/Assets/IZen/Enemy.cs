@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
             float ZRotation = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x);
             Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, ZRotation);
 
+
             transform.rotation = targetRotation;
         }
         else

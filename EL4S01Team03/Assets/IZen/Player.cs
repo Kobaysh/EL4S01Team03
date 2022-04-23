@@ -8,9 +8,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float mSpeed;
     private Vector3 mRespawnPosition;
+    private bool mIsHide;
+    [SerializeField]
+    private GameObject mBodySprite;
     void Start()
     {
         mRespawnPosition = transform.position;
+        mIsHide = false;
     }
 
     // Update is called once per frame
@@ -45,17 +49,32 @@ public class Player : MonoBehaviour
             transform.position = position;
         }
     }
- 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            transform.position = mRespawnPosition;
+            if(!mIsHide)
+            {
+                transform.position = mRespawnPosition;
+            }            
         }
+    }
+
+    public void HideStart()
+    {
+        if(!mIsHide)
+        {
+            mIsHide = true;
+            if(mBodySprite)
+            {
+                mBodySprite.GetComponent<SpriteRenderer>().color = new Color(1.0f,1.0f,1.0f,0.3f);                
+            }
+        }
+    }
+
+    public void HideEnd()
+    {
+        
     }
 }
