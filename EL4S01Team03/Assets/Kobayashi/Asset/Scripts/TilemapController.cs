@@ -24,4 +24,10 @@ public class TilemapController : MonoBehaviour
         Vector3Int intPos = Vector3Int.FloorToInt(playerPos);
         return (tilemap.GetTile(intPos).name == "hide");
     }
+
+    public bool CollisionGoalTile(Vector3 playerPos)
+    {
+        Vector3Int intPos = Vector3Int.FloorToInt(playerPos);
+        return (tilemap.GetTile(intPos).name == "goal");
+    }
 }

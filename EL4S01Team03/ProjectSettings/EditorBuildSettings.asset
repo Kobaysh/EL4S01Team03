@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/HiroWorks/Title.unity
+    guid: dc03e2b1f46f32246a2d86bfdf3c7e28
+  - enabled: 1
+    path: Assets/HiroWorks/Result.unity
+    guid: 0be977d383a251649b08d4d9c53de096
+  - enabled: 1
+    path: Assets/HiroWorks/GameOver.unity
+    guid: 5b2172c52ee4f7948ae63769ed2a605e
+  - enabled: 1
+    path: Assets/Kobayashi/Asset/Scene/Field.unity
+    guid: eb58cfb7e85ddae4aa42ae59d415bcb6
   m_configObjects: {}

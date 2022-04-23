@@ -17378,9 +17378,13 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1716
     m_Data: {fileID: 11400000, guid: 259e59dde7a36574ca0be92e132fd7e6, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1716
     m_Data: {fileID: 21300000, guid: d178777f8d6ec5c4fb6d5f80e2650279, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1716
     m_Data:
@@ -17482,7 +17486,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 69f4f4123adeee0448080ee834cd6821, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17504,7 +17508,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.14468867, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.14468867, y: 0.058571458, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -18203,8 +18207,8 @@ Tilemap:
   - first: {x: 5, y: -6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -20764,17 +20768,17 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 119
     m_Data: {fileID: 11400000, guid: 009bb79728cecee4390c39795cb18899, type: 2}
-  - m_RefCount: 202
+  - m_RefCount: 201
     m_Data: {fileID: 11400000, guid: 259e59dde7a36574ca0be92e132fd7e6, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: a18607b646f0feb498211075424584e3, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 1944045a185eb5c4e8120241226128bb, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 202
+  - m_RefCount: 201
     m_Data: {fileID: 21300000, guid: d178777f8d6ec5c4fb6d5f80e2650279, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 5bcb2e9cc187e4343869e7b6b835ba2e, type: 3}
   - m_RefCount: 119
     m_Data: {fileID: 21300000, guid: e23abea752ef3c14487c256d5fb2111c, type: 3}
   - m_RefCount: 3
