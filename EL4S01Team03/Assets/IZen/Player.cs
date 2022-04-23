@@ -11,15 +11,24 @@ public class Player : MonoBehaviour
     private bool mIsHide;
     [SerializeField]
     private GameObject mBodySprite;
+    private GameObject mMainCamera;
 
     [SerializeField] private TilemapController tileMap; // タイルマップコントローラー
 
     void Start()
     {
         mRespawnPosition = transform.position;
+        mMainCamera = GameObject.Find("Main Camera");
         mIsHide = false;
-
         if (!tileMap) tileMap = GameObject.Find("Tilemap").GetComponent<TilemapController>();
+
+        if (mMainCamera)
+        {
+            Vector3 position = transform.position;
+            position.z = -10.0f;
+            mMainCamera.transform.position = position;
+        }
+
     }
 
     // Update is called once per frame
@@ -56,7 +65,12 @@ public class Player : MonoBehaviour
         {
             Vector3 position = transform.position + Vector3.Normalize(direction) * mSpeed * Time.deltaTime;
             transform.position = position;
-
+            position.z = -10.0f;
+            if(mMainCamera)
+            {
+                mMainCamera.transform.position = position;
+            }
+            
             float ZRotation = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) + 90.0f;
             Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, ZRotation);
 
