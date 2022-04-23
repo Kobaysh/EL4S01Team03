@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &312409773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Clear
+  m_text: this is peaceful world
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40.3
+  m_fontSizeBase: 40.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21264,7 +21264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204250212657916417, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1204250212657916417, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21312,12 +21312,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3716812094986293714, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
       propertyPath: mSpeed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3716812094986293714, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
       propertyPath: tileMap
       value: 
       objectReference: {fileID: 1024603677}
+    - target: {fileID: 3716812094986293714, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
+      propertyPath: goalText
+      value: 
+      objectReference: {fileID: 312409772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e84569f1db2d7274fb6c3e5e97e79200, type: 3}
 --- !u!1001 &1352592335
@@ -21329,7 +21333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 604924883828647679, guid: 3a3a2a74b87493243a23efbe1d6023a3, type: 3}
       propertyPath: mSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 604924883828647679, guid: 3a3a2a74b87493243a23efbe1d6023a3, type: 3}
       propertyPath: mWaitTime
@@ -21402,6 +21406,10 @@ PrefabInstance:
     - target: {fileID: 3369496222987521669, guid: 3a3a2a74b87493243a23efbe1d6023a3, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369496222987521669, guid: 3a3a2a74b87493243a23efbe1d6023a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4133664962434513282, guid: 3a3a2a74b87493243a23efbe1d6023a3, type: 3}
       propertyPath: m_SortingOrder
