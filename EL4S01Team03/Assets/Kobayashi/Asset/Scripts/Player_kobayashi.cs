@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_kobayashi : MonoBehaviour
 {
     /*プレイヤーの持つパラメータを参照*/
     private Vector3 pos;//プレイヤーの座標
