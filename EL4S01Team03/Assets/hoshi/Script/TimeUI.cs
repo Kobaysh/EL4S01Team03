@@ -7,7 +7,7 @@ using TMPro;
 public class TimeUI : MonoBehaviour
 {
     public float time { set; get; }
-
+    public float maxTime;
     private TextMeshProUGUI text;
 
     
