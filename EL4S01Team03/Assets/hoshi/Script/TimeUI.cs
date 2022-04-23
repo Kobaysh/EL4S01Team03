@@ -4,29 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Time : MonoBehaviour
+public class TimeUI : MonoBehaviour
 {
-    public int time { set; get; }
-    public int count;
+    public float time { set; get; }
 
-    TextMeshProUGUI text;
+    private TextMeshProUGUI text;
 
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        SetTime(1);
-        count = 0;
+        SetTime(0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        SetTime(time + Time.deltaTime);
     }
 
-    public void SetTime(int value)
+    public void SetTime(float value)
     {
         time = value;
-        text.text = string.Format("{0:D4}", time);
+        text.text = string.Format("{0:D4}", (int)time);
     }
 }
